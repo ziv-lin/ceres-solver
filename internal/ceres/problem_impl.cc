@@ -769,7 +769,7 @@ bool ProblemImpl::EvaluateResidualBlock(ResidualBlock* residual_block,
     ParameterBlock* parameter_block = parameter_blocks[i];
     if (parameter_block->IsConstant()) {
       if (jacobians != nullptr && jacobians[i] != nullptr) {
-        LOG(ERROR) << "Jacobian requested for parameter block : " << i
+        LOG(GLOG_ERROR) << "Jacobian requested for parameter block : " << i
                    << ". But the parameter block is marked constant.";
         return false;
       }

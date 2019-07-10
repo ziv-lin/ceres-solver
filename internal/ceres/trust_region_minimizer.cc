@@ -54,7 +54,7 @@
 #define RETURN_IF_ERROR_AND_LOG(expr)                            \
   do {                                                           \
     if (!(expr)) {                                               \
-      LOG(ERROR) << "Terminating: " << solver_summary_->message; \
+      LOG(GLOG_ERROR) << "Terminating: " << solver_summary_->message; \
       return;                                                    \
     }                                                            \
   } while (0)

@@ -121,7 +121,7 @@ void GradientProblemSolver::Solve(const GradientProblemSolver::Options& options,
 
   // Check validity
   if (!options.IsValid(&summary->message)) {
-    LOG(ERROR) << "Terminating: " << summary->message;
+    LOG(GLOG_ERROR) << "Terminating: " << summary->message;
     return;
   }
 

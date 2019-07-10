@@ -486,7 +486,7 @@ void Solver::Solve(const Solver::Options& options,
   double start_time = WallTimeInSeconds();
   *summary = Summary();
   if (!options.IsValid(&summary->message)) {
-    LOG(ERROR) << "Terminating: " << summary->message;
+    LOG(GLOG_ERROR) << "Terminating: " << summary->message;
     return;
   }
 

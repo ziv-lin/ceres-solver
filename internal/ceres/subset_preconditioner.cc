@@ -104,7 +104,7 @@ bool SubsetPreconditioner::UpdateImpl(const BlockSparseMatrix& A,
       sparse_cholesky_->Factorize(inner_product_computer_->mutable_result(),
                                   &message);
   if (termination_type != LINEAR_SOLVER_SUCCESS) {
-    LOG(ERROR) << "Preconditioner factorization failed: " << message;
+    LOG(GLOG_ERROR) << "Preconditioner factorization failed: " << message;
     return false;
   }
 
