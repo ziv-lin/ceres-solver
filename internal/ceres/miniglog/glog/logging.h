@@ -36,7 +36,7 @@
 //   VLOG(1),
 //   LOG(INFO), VLOG(0), LG
 //   LOG(WARNING),
-//   LOG(ERROR),
+//   LOG(GLOG_ERROR),
 //   LOG(FATAL),
 //
 // With VLOG(n), the output is directed to one of the 5 Android log levels:
@@ -186,7 +186,7 @@ class CERES_EXPORT MessageLogger {
 #ifdef ANDROID
     static const int android_log_levels[] = {
         ANDROID_LOG_FATAL,    // LOG(FATAL)
-        ANDROID_LOG_ERROR,    // LOG(ERROR)
+        ANDROID_LOG_ERROR,    // LOG(GLOG_ERROR)
         ANDROID_LOG_WARN,     // LOG(WARNING)
         ANDROID_LOG_INFO,     // LOG(INFO), LG, VLOG(0)
         ANDROID_LOG_DEBUG,    // VLOG(1)

@@ -525,7 +525,7 @@ CostFunction* CreateCostFunction(const Matrix& predictor,
           num_observations,
           options);
     } else {
-      LOG(ERROR) << "Invalid numeric diff method specified";
+      LOG(GLOG_ERROR) << "Invalid numeric diff method specified";
       return 0;
     }
   } else {

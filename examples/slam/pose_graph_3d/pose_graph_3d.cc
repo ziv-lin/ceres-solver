@@ -124,7 +124,7 @@ bool OutputPoses(const std::string& filename, const MapOfPoses& poses) {
   std::fstream outfile;
   outfile.open(filename.c_str(), std::istream::out);
   if (!outfile) {
-    LOG(ERROR) << "Error opening the file: " << filename;
+    LOG(GLOG_ERROR) << "Error opening the file: " << filename;
     return false;
   }
   for (std::map<int, Pose3d, std::less<int>,

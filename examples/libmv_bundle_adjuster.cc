@@ -784,7 +784,7 @@ int main(int argc, char **argv) {
   google::InitGoogleLogging(argv[0]);
 
   if (FLAGS_input.empty()) {
-    LOG(ERROR) << "Usage: libmv_bundle_adjuster --input=blender_problem";
+    LOG(GLOG_ERROR) << "Usage: libmv_bundle_adjuster --input=blender_problem";
     return EXIT_FAILURE;
   }
 
@@ -800,7 +800,7 @@ int main(int argc, char **argv) {
                            &all_points,
                            &is_image_space,
                            &all_markers)) {
-    LOG(ERROR) << "Error reading problem file";
+    LOG(GLOG_ERROR) << "Error reading problem file";
     return EXIT_FAILURE;
   }
 
@@ -826,7 +826,7 @@ int main(int argc, char **argv) {
     if (FLAGS_refine_intrinsics == "radial") {
       bundle_intrinsics = BUNDLE_FOCAL_LENGTH | BUNDLE_RADIAL;
     } else if (FLAGS_refine_intrinsics != "none") {
-      LOG(ERROR) << "Unsupported value for refine-intrinsics";
+      LOG(GLOG_ERROR) << "Unsupported value for refine-intrinsics";
       return EXIT_FAILURE;
     }
   }

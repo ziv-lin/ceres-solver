@@ -109,7 +109,7 @@ static void SetNumericDiffOptions(ceres::NumericDiffOptions* options) {
                                              num_parameters>(             \
               new name, ceres::TAKE_OWNERSHIP, num_residuals, options);   \
         } else {                                                          \
-          LOG(ERROR) << "Invalid numeric diff method specified";          \
+          LOG(GLOG_ERROR) << "Invalid numeric diff method specified";          \
           return NULL;                                                    \
         }                                                                 \
       } else {                                                            \

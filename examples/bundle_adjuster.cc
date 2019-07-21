@@ -336,7 +336,7 @@ int main(int argc, char** argv) {
   CERES_GFLAGS_NAMESPACE::ParseCommandLineFlags(&argc, &argv, true);
   google::InitGoogleLogging(argv[0]);
   if (FLAGS_input.empty()) {
-    LOG(ERROR) << "Usage: bundle_adjuster --input=bal_problem";
+    LOG(GLOG_ERROR) << "Usage: bundle_adjuster --input=bal_problem";
     return 1;
   }
 

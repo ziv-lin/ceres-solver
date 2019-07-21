@@ -52,7 +52,7 @@ bool ReadVertex(std::ifstream* infile,
 
   // Ensure we don't have duplicate poses.
   if (poses->find(id) != poses->end()) {
-    LOG(ERROR) << "Duplicate vertex with ID: " << id;
+    LOG(GLOG_ERROR) << "Duplicate vertex with ID: " << id;
     return false;
   }
   (*poses)[id] = pose;
@@ -124,7 +124,7 @@ bool ReadG2oFile(const std::string& filename,
     } else if (data_type == Constraint::name()) {
       ReadConstraint(&infile, constraints);
     } else {
-      LOG(ERROR) << "Unknown data type: " << data_type;
+      LOG(GLOG_ERROR) << "Unknown data type: " << data_type;
       return false;
     }
 

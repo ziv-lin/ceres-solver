@@ -129,7 +129,7 @@ TEST(ThreadPool, Destructor) {
   // pass.
   const int num_hardware_threads = std::thread::hardware_concurrency();
   if (num_hardware_threads <= 1) {
-    LOG(ERROR)
+    LOG(GLOG_ERROR)
         << "Test not supported, the hardware does not support threading.";
     return;
   }
@@ -176,7 +176,7 @@ TEST(ThreadPool, Resize) {
   // pass.
   const int num_hardware_threads = std::thread::hardware_concurrency();
   if (num_hardware_threads <= 1) {
-    LOG(ERROR)
+    LOG(GLOG_ERROR)
         << "Test not supported, the hardware does not support threading.";
     return;
   }
